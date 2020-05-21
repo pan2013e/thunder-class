@@ -7,7 +7,12 @@
 #include <netinet/in.h>
 #include <netinet/tcp.h>
 #include <arpa/inet.h>
+#include <chrono>
+#include <thread>
 
+#ifdef __APPLE__
+#include <CoreGraphics/CoreGraphics.h>
+#endif /* CoreGraphics Library */
 
 void server(void);
 

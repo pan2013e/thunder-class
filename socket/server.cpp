@@ -1,4 +1,7 @@
 #include "server.h"
+#define DEFAULT_IP 0x00000000 //server: listen on localhost by default
+
+#define SERVER_IP DEFAULT_IP
 
 void server(){
     //create socket
@@ -7,7 +10,7 @@ void server(){
     //set up ip and port
     struct sockaddr_in serverAddress;
     serverAddress.sin_family = AF_INET;
-    serverAddress.sin_addr.s_addr = 0x00000000; //listen on localhost
+    serverAddress.sin_addr.s_addr = SERVER_IP; 
     serverAddress.sin_port = 0xBEAF;
 
     //apply for port
