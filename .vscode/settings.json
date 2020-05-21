@@ -2,6 +2,7 @@
     "files.associations": {
         ".gitignore": "git-commit",
         "cstring": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "chrono": "cpp"
     }
 }
