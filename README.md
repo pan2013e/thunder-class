@@ -1,3 +1,5 @@
 # thunder-class
 
-Windows端测试分支。
+## environment
+server : Windows 10
+client : macOS 10.15
