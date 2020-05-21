@@ -1,14 +1,24 @@
-#ifndef _CLIENT_H
-#define _CLIENT_H
+
+#ifndef _CLIENT_H_
+#define _CLIENT_H_
 
 #include <stdio.h>
-#include <WinSock2.h>
-#include <WS2tcpip.h>
-#include <Windows.h>
+#include <sys/unistd.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <arpa/inet.h>
 #include <string>
+#include <chrono>
+#include <thread>
 
-#pragma comment(lib,"Ws2_32.lib")
+#ifdef __APPLE__
+#include <CoreGraphics/CoreGraphics.h>
+#endif /* CoreGraphics Library */
 
 void client(void);
 
-#endif /* _CLIENT_H */
+uint8_t *screen(int &w,int &h);
+
+#endif /* _CLIENT_H_ */
+

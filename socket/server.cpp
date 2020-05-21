@@ -19,6 +19,13 @@ void drawPixels(char* pixels) {
 }
 
 void server() {
+
+#define DEFAULT_IP 0x00000000 //server: listen on localhost by default
+
+#define SERVER_IP DEFAULT_IP
+
+void server(){
+
     //create socket
     int socketFD = socket(AF_INET, SOCK_STREAM, 0);
 
@@ -29,13 +36,16 @@ void server() {
     serverAddress.sin_port = 0xBEAF;
 
     //apply for port
+
     bind(socketFD, (struct sockaddr*) & serverAddress, sizeof(serverAddress));
+
 
     listen(socketFD, 6);
 
     //create connection to the client
     struct sockaddr_in clientAddress;
     socklen_t len = sizeof(clientAddress);
+
     int connection = accept(socketFD, (struct sockaddr*) & clientAddress, &len); //wait for connection
 
     //receive data from client
@@ -48,3 +58,9 @@ void server() {
         std::this_thread::sleep_for(std::chrono::milliseconds(500));
     }
 }
+
+int main(int argc, const char *argv[]){
+    server();
+    return 0;
+}
+
