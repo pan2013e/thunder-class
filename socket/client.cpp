@@ -34,6 +34,7 @@ void client(){
     serverAddress.sin_addr.s_addr = SERVER_IP; //listen on localhost
     serverAddress.sin_port = 0xBEAF;
 
+
     connect(socketFD, (struct sockaddr *)&serverAddress, sizeof(serverAddress));
     while(true){
         this_thread::sleep_for(chrono::seconds(1));

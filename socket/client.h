@@ -1,3 +1,4 @@
+
 #ifndef _CLIENT_H_
 #define _CLIENT_H_
 
@@ -20,3 +21,4 @@ void client(void);
 uint8_t *screen(int &w,int &h);
 
 #endif /* _CLIENT_H_ */
+
